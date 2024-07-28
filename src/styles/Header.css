@@ -1,0 +1,15 @@
+/* header.css */
+.header-light {
+    background-color: #88c8fb;
+    color: #0d1321;
+}
+
+.header-dark {
+    background-color: #0d1321;
+    color: #edf5fd;
+}
+
+
+.ant-switch-checked {
+    background-color: #0d1321;
+}

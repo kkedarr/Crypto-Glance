@@ -1,0 +1,116 @@
+/* General App Styles */
+.App {
+  text-align: center;
+}
+
+/* App Logo Animation */
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+/* Header Styles */
+.App-header {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+/* Link Styles */
+.App-link {
+  color: #61dafb;
+}
+
+/* Keyframes for Logo Spin */
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Light Mode Styles */
+.light-mode {
+  background-color: #edf5fd;
+  color: #0d1321;
+}
+
+/* Dark Mode Styles */
+.dark-mode {
+  background-color: #0d1321;
+  color: #edf5fd;
+}
+
+/* Ant Design Table Adjustments for Light Mode */
+.light-mode .ant-table {
+  background-color: #edf5fd;
+}
+
+.light-mode .ant-table-thead>tr>th {
+  background-color: #88c8fb;
+  color: #0d1321;
+}
+
+.light-mode .ant-table-tbody>tr>td {
+  background-color: #edf5fd;
+  color: #0d1321;
+}
+
+/* Ant Design Table Adjustments for Dark Mode */
+.dark-mode .ant-table {
+  background-color: #0d1321;
+}
+
+.dark-mode .ant-table-thead>tr>th {
+  background-color: #1a131a;
+  color: #edf5fd;
+}
+
+.dark-mode .ant-table-tbody>tr>td {
+  background-color: #0d1321;
+  color: #edf5fd;
+}
+
+/* Header Light Mode */
+.header-light {
+  background-color: #88c8fb;
+  color: #0d1321;
+}
+
+/* Header Dark Mode */
+.header-dark {
+  background-color: #0d1321;
+  color: #edf5fd;
+}
+
+/* Ant Design Switch Checked Color */
+.ant-switch-checked {
+  background-color: #007da3;
+}
+
+/* Adjustments for Content Area */
+.Content {
+  padding: 20px;
+}
+
+/* Specific Adjustments for Menu */
+.ant-menu-light {
+  background-color: #edf5fd;
+}
+
+.ant-menu-dark {
+  background-color: #0d1321;
+}

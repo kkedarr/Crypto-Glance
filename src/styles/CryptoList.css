@@ -1,0 +1,39 @@
+/* App.css */
+.light-mode {
+    background-color: #88c8fb;
+    color: #0d1321;
+}
+
+.dark-mode {
+    background-color: #0d1321;
+    color: #edf5fd;
+}
+
+.ant-table {
+    background-color: inherit;
+}
+
+.light-mode .ant-table-thead>tr>th,
+.light-mode .ant-table-tbody>tr>td {
+    background-color: #88c8fb;
+    color: #0d1321;
+}
+
+.dark-mode .ant-table-thead>tr>th,
+.dark-mode .ant-table-tbody>tr>td {
+    background-color: #0d1321;
+    color: #edf5fd;
+}
+
+.ant-switch-checked {
+    background-color: #0d1321;
+}
+
+/* Additional Styling for Primary and Accent colors */
+.primary {
+    color: #007da3;
+}
+
+.accent {
+    color: #58c5da;
+}
