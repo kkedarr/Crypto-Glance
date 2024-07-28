@@ -20,7 +20,7 @@ const App = () => {
         <AppHeader />
         <Content>
           <Routes>
-            <Route exact path="/" element={<CryptoList />} />
+            <Route index element={<CryptoList />} />
             <Route exact path="/crypto/:id" element={<CryptoDetails />} />
             <Route exact path="/favorites" element={<Favorites />} />
             <Route exact path="/news" element={<News />} />
