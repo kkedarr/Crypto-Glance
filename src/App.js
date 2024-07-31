@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 import './App.css';
 import CryptoList from './components/CryptoList';
@@ -7,25 +7,47 @@ import AppHeader from "./components/Header";
 import { Layout } from "antd";
 import Favorites from "./components/Favorites"
 import News from "./components/News"
+// src/index.js or src/App.js
+import { Chart as ChartJS, CategoryScale, LinearScale, LineElement, PointElement, Title, Tooltip, Legend } from 'chart.js';
+
+// Register components
+ChartJS.register(
+  CategoryScale,
+  LinearScale,
+  LineElement,
+  PointElement,
+  Title,
+  Tooltip,
+  Legend
+);
+
 
 
 const { Content } = Layout;
 
 
 const App = () => {
-  return (
 
+  const [darkMode, setDarkMode] = useState(false);
+
+  const handleThemeChange = (checked) => {
+    setDarkMode(checked);
+  }
+
+  return (
     <Router>
-      <Layout>
-        <AppHeader />
-        <Content>
-          <Routes>
-            <Route index element={<CryptoList />} />
-            <Route exact path="/crypto/:id" element={<CryptoDetails />} />
-            <Route exact path="/favorites" element={<Favorites />} />
-            <Route exact path="/news" element={<News />} />
-          </Routes>
-        </Content>
+      <Layout style={{ minHeight: '100vh' }}>
+        <AppHeader darkMode={darkMode} onThemeChange={handleThemeChange} />
+        <Layout>
+          <Content style={{ padding: '0 50px', marginTop: '20px' }}>
+            <Routes>
+              <Route index element={<CryptoList />} />
+              <Route path="/crypto/:id" element={<CryptoDetails />} />
+              <Route path="/favorites" element={<Favorites />} />
+              <Route path="/news" element={<News />} />
+            </Routes>
+          </Content>
+        </Layout>
       </Layout>
     </Router>
   )

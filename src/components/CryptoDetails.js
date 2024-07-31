@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react"
 import { Card } from "antd";
 import axios from "axios";
 import { useParams } from "react-router-dom";
+import CryptoChart from "./CryptoChart";
 
 const API_KEY = 'CG-nRoPKdtpAXr9QRfWndv3n8d5';
 const BASE_URL = 'https://api.coingecko.com/api/v3';
@@ -36,6 +37,7 @@ const CryptoDetails = () => {
             <a href={crypto.links.homepage[0]} target="_blank" rel="noopener noreferrer">
                 Official Website
             </a>
+            < CryptoChart coinId={id} />
         </Card>
     );
 };
