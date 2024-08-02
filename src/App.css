@@ -17,13 +17,14 @@
 
 /* Header Styles */
 .App-header {
-  min-height: 100vh;
+  min-height: 64px;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  padding: 0 20px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: #000;
 }
 
 /* Link Styles */
@@ -113,4 +114,35 @@
 
 .ant-menu-dark {
   background-color: #0d1321;
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 1200px) {
+  .Content {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .ant-menu {
+    font-size: 14px;
+  }
+
+  .ant-card {
+    width: 100%;
+  }
+}
+
+@media (max-width: 576px) {
+  .ant-menu {
+    font-size: 12px;
+  }
+
+  .Content {
+    padding: 10px;
+  }
+
+  .ant-card {
+    width: 100%;
+  }
 }

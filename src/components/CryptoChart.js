@@ -31,8 +31,9 @@ const CryptoChart = ({ coinId }) => {
                     {
                         label: 'Price in USD',
                         data: prices.map(price => price.value),
-                        borderColor: 'rgba(75, 192, 192, 1)',
-                        backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                        color: 'green',
+                        borderColor: 'rgba(60, 154, 154, 1)',
+                        backgroundColor: 'rgba(60, 154, 154, 0.2)',
                     },
                 ],
             });

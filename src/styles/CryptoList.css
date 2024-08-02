@@ -1,6 +1,6 @@
 /* App.css */
 .light-mode {
-    background-color: #88c8fb;
+    background-color: #cce8ff;
     color: #0d1321;
 }
 
@@ -15,7 +15,7 @@
 
 .light-mode .ant-table-thead>tr>th,
 .light-mode .ant-table-tbody>tr>td {
-    background-color: #88c8fb;
+    background-color: #cce8ff;
     color: #0d1321;
 }
 

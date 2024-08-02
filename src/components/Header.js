@@ -1,14 +1,15 @@
 import React from "react"
 import { Layout, Menu } from "antd"
 import { Link } from "react-router-dom"
+import "../styles/Header.css"
 
 const { Header } = Layout;
 
-const AppHeader = () => {
+const AppHeader = ({ darkMode }) => {
     return (
-        <Header>
+        <Header className={darkMode ? "header-dark" : "header-light"}>
             <div className="logo" />
-            <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['1']}>
+            <Menu theme={darkMode ? "dark" : "light"} mode="horizontal" defaultSelectedKeys={['1']}>
                 <Menu.Item key="1">
                     <Link to="/">Home</Link>
                 </Menu.Item>
