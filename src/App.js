@@ -36,7 +36,7 @@ const App = () => {
 
   return (
     <Router>
-      <Layout style={{ minHeight: '100vh' }}>
+      <Layout className={darkMode ? 'dark-mode' : 'light-mode'} style={{ minHeight: '100vh' }}>
         <AppHeader darkMode={darkMode} onThemeChange={handleThemeChange} />
         <Layout>
           <Content style={{ padding: '0 50px', marginTop: '20px' }}>
