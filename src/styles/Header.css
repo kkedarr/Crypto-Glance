@@ -1,35 +1,9 @@
-/* Header Light Mode */
-.header-light {
-    background-color: #88c8fb;
-    color: #0d1321;
-}
-
-/* Header Dark Mode */
 .header-dark {
-    background-color: #0d1321;
-    color: #edf5fd;
+    background-color: #001529;
+    color: #001529;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-
-    .header-light,
-    .header-dark {
-        padding: 0 10px;
-        /* Reduced padding for small screens */
-    }
-}
-
-@media (max-width: 576px) {
-
-    .header-light,
-    .header-dark {
-        text-align: center;
-        /* Center align on very small screens */
-    }
-
-    .ant-menu {
-        font-size: 14px;
-        /* Adjust font size for smaller screens */
-    }
+.header-light {
+    background-color: #cce8ff;
+    color: #cce8ff;
 }

@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react"
-import { Table, Switch } from "antd"
+import { Table, Button } from "antd"
 import axios from "axios"
-import { Link } from "react-router-dom"
+/* import { Link } from "react-router-dom" */
 import "../styles/CryptoList.css"
 import { Line } from 'react-chartjs-2'
 import { Chart as ChartJS, LineElement, CategoryScale, LinearScale } from 'chart.js';
+import { HeartOutlined, HeartFilled } from '@ant-design/icons';
+
 
 
 ChartJS.register(LineElement, CategoryScale, LinearScale);
@@ -15,6 +17,8 @@ const BASE_URL = 'https://api.coingecko.com/api/v3';
 const CryptoList = () => {
     const [data, setData] = useState([]);
     const [darkMode, setDarkMode] = useState(false);
+    const [favorites, setFavorites] = useState(() => JSON.parse(localStorage.getItem('favorites')) || []);
+
 
     useEffect(() => {
         const fetchData = async () => {
@@ -25,7 +29,7 @@ const CryptoList = () => {
                         params: {
                             vs_currency: 'usd',
                             order: 'market_cap_desc',
-                            per_page: 10,
+                            per_page: 50,
                             page: 1,
                             sparkline: true,
                             x_cg_demo_api_key: API_KEY,
@@ -41,23 +45,26 @@ const CryptoList = () => {
         fetchData();
     }, []);
 
-    const handleThemeChange = () => {
-        setDarkMode(!darkMode);
-    };
-
     const formatCurrency = (number) => {
         return `$${new Intl.NumberFormat('en-US', {
-            minimumFractionDigits: 2,
-            maximumFractionDigits: 2,
+            minimumFractionDigits: 0,
+            maximumFractionDigits: 0,
         }).format(number)}`
+    };
+
+    const handleFavorite = (coin) => {
+        const updatedFavorites = favorites.some(fav => fav.id === coin.id)
+            ? favorites.filter(fav => fav.id !== coin.id) : [...favorites, coin];
+        localStorage.setItem('favorites', JSON.stringify(updatedFavorites));
+        setFavorites(updatedFavorites);
     };
 
     const columns = [
         {
-            title: 'Name',
-            dataIndex: 'name',
-            key: 'name',
-            render: (text, record) => <Link to={`/crypto/${record.id}`}>{text}</Link>,
+            title: 'Symbol',
+            dataIndex: 'symbol',
+            key: 'symbol',
+            render: symbol => <span>{symbol.toUpperCase()}</span>,
         },
         {
             title: 'Current Price',
@@ -78,11 +85,14 @@ const CryptoList = () => {
             render: text => `${text.toFixed(2)}%`,
         },
         {
-            title: 'Price Trend (7d)',
+            title: 'The Last 7 days',
             dataIndex: 'sparkline_in_7d',
             key: 'sparkline_in_7d',
             render: sparkline => {
                 if (!sparkline || !sparkline.price) return null;
+
+                const lineColor = data.find(record => record.id === sparkline.id)?.price_change_percentage_24h > 0 ? 'green' : 'red';
+
                 const chartData = {
                     labels: sparkline.price.map((_, index) => index),
                     datasets: [
@@ -90,8 +100,8 @@ const CryptoList = () => {
                             label: 'Price',
                             data: sparkline.price,
                             fill: false,
-                            backgroundColor: 'rgba(75,192,192,0.4)',
-                            borderColor: 'rgba(75,192,192,1)',
+                            backgroundColor: lineColor,
+                            borderColor: lineColor,
                             borderWidth: 1,
                             pointRadius: 0,
                             tension: 0.4,
@@ -106,7 +116,7 @@ const CryptoList = () => {
                         y: { display: false },
                     },
                     elements: {
-                        line: { borderColor: 'rgba(75,192,192,1)' },
+                        line: { borderColor: lineColor },
                     },
                 };
 
@@ -116,13 +126,24 @@ const CryptoList = () => {
                     </div>
                 )
             }
+        },
+        {
+            title: 'Favorite',
+            key: 'action',
+            render: (text, record) => {
+                const isFavorite = favorites.some(fav => fav.id === record.id);
+                return (
+                    <Button onClick={() => handleFavorite(record)}
+                        icon={isFavorite ? <HeartFilled style={{ color: 'red' }} /> : <HeartOutlined />}
+                    />
+                )
+            }
         }
     ];
 
     return (
 
         <div className={darkMode ? 'dark-mode' : 'light-mode'}>
-            <Switch checked={darkMode} onChange={handleThemeChange} checkedChildren="Dark" unCheckedChildren="Light" />
             <Table dataSource={data} columns={columns} rowKey="id" />
         </div>
     )

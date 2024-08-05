@@ -1,0 +1,37 @@
+.favorites-light {
+    background-color: #cce8ff;
+    color: #001529;
+}
+
+.favorites-light .ant-card {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+}
+
+/* Dark mode styles */
+.favorites-dark {
+    background-color: #001529;
+    color: #cce8ff;
+}
+
+.favorites-dark .ant-card {
+    background-color: #002140;
+    border: 1px solid #004085;
+}
+
+/* Button styles */
+button {
+    padding: 10px 20px;
+    margin-bottom: 20px;
+    border: 2px solid;
+    cursor: pointer;
+}
+
+button {
+    background-color: #007bff;
+    color: #cce8ff;
+}
+
+button:hover {
+    background-color: #001529;
+}
