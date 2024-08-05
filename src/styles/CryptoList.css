@@ -1,11 +1,16 @@
 .light-mode {
     background-color: #cce8ff;
     color: #001529;
+    font-family: 'Darker Grotesque', serif;
+    font-size: 18px;
 }
 
 .dark-mode {
     background-color: #001529;
     color: #edf5fd;
+    font-family: 'Darker Grotesque', serif;
+    font-size: 18px;
+
 }
 
 .ant-table {
@@ -16,16 +21,23 @@
 .light-mode .ant-table-tbody>tr>td {
     background-color: #cce8ff;
     color: #001529;
+    font-family: 'Darker Grotesque', serif;
+    font-size: 18px;
 }
+
 
 .dark-mode .ant-table-thead>tr>th,
 .dark-mode .ant-table-tbody>tr>td {
     background-color: #001529;
     color: #88c8fb;
+    font-family: 'Darker Grotesque', serif;
+    font-size: 18px;
 }
 
 .ant-switch-checked {
     background-color: #001529;
+    font-family: 'Darker Grotesque', serif;
+    font-size: 18px;
 }
 
 /* Additional Styling for Primary and Accent colors */

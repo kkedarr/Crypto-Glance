@@ -5,6 +5,8 @@ form {
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 4px #007BFF;
+    font-family: 'Darker Grotesque', serif;
+    font-size: 18px;
 }
 
 input {
@@ -13,6 +15,8 @@ input {
     margin-bottom: 10px;
     border: 1px solid #DDDDDD;
     border-radius: 4px;
+    font-family: 'Darker Grotesque', serif;
+    font-size: 18px;
 }
 
 .dark-mode input {
@@ -29,6 +33,8 @@ button {
     background-color: #007BFF;
     color: #FFFFFF;
     cursor: pointer;
+    font-family: 'Darker Grotesque', serif;
+    font-size: 18px;
 }
 
 button:hover {
