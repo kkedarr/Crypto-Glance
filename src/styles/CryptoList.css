@@ -1,11 +1,10 @@
-/* App.css */
 .light-mode {
     background-color: #cce8ff;
-    color: #0d1321;
+    color: #001529;
 }
 
 .dark-mode {
-    background-color: #0d1321;
+    background-color: #001529;
     color: #edf5fd;
 }
 
@@ -16,17 +15,17 @@
 .light-mode .ant-table-thead>tr>th,
 .light-mode .ant-table-tbody>tr>td {
     background-color: #cce8ff;
-    color: #0d1321;
+    color: #001529;
 }
 
 .dark-mode .ant-table-thead>tr>th,
 .dark-mode .ant-table-tbody>tr>td {
-    background-color: #0d1321;
+    background-color: #001529;
     color: #88c8fb;
 }
 
 .ant-switch-checked {
-    background-color: #0d1321;
+    background-color: #001529;
 }
 
 /* Additional Styling for Primary and Accent colors */
