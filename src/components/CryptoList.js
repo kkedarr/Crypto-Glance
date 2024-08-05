@@ -61,13 +61,13 @@ const CryptoList = () => {
 
     const columns = [
         {
-            title: 'Symbol',
+            title: 'Coin',
             dataIndex: 'symbol',
             key: 'symbol',
             render: symbol => <span>{symbol.toUpperCase()}</span>,
         },
         {
-            title: 'Current Price',
+            title: 'Price',
             dataIndex: 'current_price',
             key: 'current_price',
             render: text => formatCurrency(text),
@@ -79,13 +79,13 @@ const CryptoList = () => {
             render: text => formatCurrency(text),
         },
         {
-            title: '24h Change',
+            title: '24 hour Change',
             dataIndex: 'price_change_percentage_24h',
             key: 'price_change_percentage_24h',
             render: text => `${text.toFixed(2)}%`,
         },
         {
-            title: 'The Last 7 days',
+            title: 'Last 7 days Trend',
             dataIndex: 'sparkline_in_7d',
             key: 'sparkline_in_7d',
             render: sparkline => {
