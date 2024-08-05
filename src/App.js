@@ -14,6 +14,11 @@ import { AuthProvider } from "./context/AuthContext";
 import { FavoritesProvider } from "./context/FavoritesContext";
 import Login from "./components/Login";
 
+import logoLight from './images/logo-light.png';
+import logoDark from './images/logo-dark.png';
+import logoTextDark from './images/logo-text-dark.png'
+import logoTextLight from './images/logo-text-light.png'
+
 const { Content } = Layout;
 
 const App = () => {
@@ -28,7 +33,7 @@ const App = () => {
       <FavoritesProvider>
         <Router>
           <Layout className={darkMode ? 'dark-mode' : 'light-mode'} style={{ minHeight: '100vh' }}>
-            <AppHeader darkMode={darkMode} onThemeChange={handleThemeChange} />
+            <AppHeader darkMode={darkMode} onThemeChange={handleThemeChange} logo={darkMode ? logoDark : logoLight} logoText={darkMode ? logoTextDark : logoTextLight} />
             <Layout className={darkMode ? 'dark-mode' : 'light-mode'}>
               <Content style={{ padding: '0 50px', marginTop: '20px' }}>
                 <Routes>

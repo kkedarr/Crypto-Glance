@@ -1,9 +1,50 @@
 .header-dark {
     background-color: #001529;
-    color: #001529;
+    color: #edf5fd;
+    padding: 0 50px;
+    display: flex;
+    align-items: center;
 }
 
 .header-light {
     background-color: #cce8ff;
-    color: #cce8ff;
+    color: #0d1321;
+    padding: 0 50px;
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    height: 50px;
+    width: auto;
+    margin-right: 20px;
+}
+
+.logoText {
+    height: 50px;
+    width: auto;
+    margin-right: auto;
+}
+
+.menu {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    margin-left: 770px;
+}
+
+.theme-switch {
+    margin: 0;
+}
+
+.switch-item {
+    margin-left: 20px;
+}
+
+.ant-menu {
+    line-height: 64px;
+}
+
+.ant-menu-item {
+    color: inherit;
 }
