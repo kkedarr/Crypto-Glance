@@ -4,6 +4,7 @@ import './App.css';
 import './styles/Favorites.css';
 import './styles/News.css';
 import './styles/Login.css';
+
 import CryptoList from './components/CryptoList';
 import CryptoDetails from './components/CryptoDetails';
 import AppHeader from "./components/Header";
@@ -28,6 +29,10 @@ const App = () => {
     setDarkMode(checked);
   };
 
+  const fontStyle = {
+    fontFamily: 'Darker Grotesque, serif',
+  };
+
   return (
     <AuthProvider>
       <FavoritesProvider>
@@ -37,11 +42,11 @@ const App = () => {
             <Layout className={darkMode ? 'dark-mode' : 'light-mode'}>
               <Content style={{ padding: '0 50px', marginTop: '20px' }}>
                 <Routes>
-                  <Route index element={<CryptoList />} />
-                  <Route path="/crypto/:id" element={<CryptoDetails />} />
-                  <Route path="/favorites" element={<Favorites />} />
-                  <Route path="/news" element={<News />} />
-                  <Route path="/login" element={<Login />} />
+                  <Route index element={<CryptoList style={fontStyle} />} />
+                  <Route path="/crypto/:id" element={<CryptoDetails style={fontStyle} />} />
+                  <Route path="/favorites" element={<Favorites style={fontStyle} />} />
+                  <Route path="/news" element={<News style={fontStyle} />} />
+                  <Route path="/login" element={<Login style={fontStyle} />} />
                 </Routes>
               </Content>
             </Layout>
@@ -53,3 +58,4 @@ const App = () => {
 };
 
 export default App;
+

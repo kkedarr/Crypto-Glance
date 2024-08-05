@@ -1,22 +1,30 @@
 .favorites-light {
     background-color: #cce8ff;
     color: #001529;
+    font-family: 'Darker Grotesque', serif;
+    font-size: 18px;
 }
 
 .favorites-light .ant-card {
     background-color: #ffffff;
     border: 1px solid #ddd;
+    font-family: 'Darker Grotesque', serif;
+    font-size: 18px;
 }
 
 /* Dark mode styles */
 .favorites-dark {
     background-color: #001529;
     color: #cce8ff;
+    font-family: 'Darker Grotesque', serif;
+    font-size: 18px;
 }
 
 .favorites-dark .ant-card {
     background-color: #002140;
     border: 1px solid #004085;
+    font-family: 'Darker Grotesque', serif;
+    font-size: 18px;
 }
 
 /* Button styles */
@@ -25,11 +33,15 @@ button {
     margin-bottom: 20px;
     border: 2px solid;
     cursor: pointer;
+    font-family: 'Darker Grotesque', serif;
+    font-size: 18px;
 }
 
 button {
     background-color: #007bff;
     color: #cce8ff;
+    font-family: 'Darker Grotesque', serif;
+    font-size: 18px;
 }
 
 button:hover {

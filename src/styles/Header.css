@@ -1,7 +1,7 @@
 .header-dark {
     background-color: #001529;
     color: #edf5fd;
-    padding: 0 50px;
+    padding: 0 20px;
     display: flex;
     align-items: center;
 }
@@ -9,7 +9,7 @@
 .header-light {
     background-color: #cce8ff;
     color: #0d1321;
-    padding: 0 50px;
+    padding: 0 20px;
     display: flex;
     align-items: center;
 }

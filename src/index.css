@@ -1,18 +1,18 @@
 body {
   margin: 0;
 
-  font-family: "Roboto", sans-serif;
+  font-family: "Darker Grotesque", sans-serif;
+  font-optical-sizing: auto;
   font-weight: 700;
   font-style: normal;
-
 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: "Roboto", sans-serif;
+  font-family: "Darker Grotesque", sans-serif;
+  font-optical-sizing: auto;
   font-weight: 700;
   font-style: normal;
-
 }

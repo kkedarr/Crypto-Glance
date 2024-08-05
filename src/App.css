@@ -1,9 +1,37 @@
 .light-mode {
   background-color: #cce8ff;
   color: #001529;
+  font-family: 'Darker Grotesque', serif;
+  font-size: 18px;
 }
 
 .dark-mode {
   background-color: #001529;
   color: #edf5fd;
+  font-family: 'Darker Grotesque', serif;
+  font-size: 18px;
+}
+
+body {
+  font-family: 'Darker Grotesque', serif;
+  font-size: 18px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+Routes {
+  font-family: 'Darker Grotesque', serif;
+  font-size: 18px;
+}
+
+/* Additional styling to ensure Ant Design components use the font */
+.ant-typography,
+.ant-menu-item,
+.ant-btn {
+  font-family: 'Darker Grotesque', serif;
+  font-size: 18px;
 }
