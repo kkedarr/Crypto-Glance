@@ -3,6 +3,7 @@ import { Table, Button } from "antd"
 import axios from "axios"
 /* import { Link } from "react-router-dom" */
 import "../styles/CryptoList.css"
+import "../styles/generalmediaqueries.css"
 import { Line } from 'react-chartjs-2'
 import { Chart as ChartJS, LineElement, CategoryScale, LinearScale } from 'chart.js';
 import { HeartOutlined, HeartFilled } from '@ant-design/icons';
@@ -91,7 +92,7 @@ const CryptoList = () => {
             render: sparkline => {
                 if (!sparkline || !sparkline.price) return null;
 
-                const lineColor = data.find(record => record.id === sparkline.id)?.price_change_percentage_24h > 0 ? 'green' : 'red';
+                const lineColor = data.find(record => record.id === sparkline.id)?.price_change_percentage_24h > 0 ? 'green' : 'green';
 
                 const chartData = {
                     labels: sparkline.price.map((_, index) => index),
