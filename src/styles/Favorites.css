@@ -1,3 +1,4 @@
+/* Light mode styles */
 .favorites-light {
     background-color: #cce8ff;
     color: #001529;
@@ -31,13 +32,8 @@
 button {
     padding: 10px 20px;
     margin-bottom: 20px;
-    border: 2px solid;
+    border: 2px solid #001529;
     cursor: pointer;
-    font-family: 'Darker Grotesque', serif;
-    font-size: 18px;
-}
-
-button {
     background-color: #007bff;
     color: #cce8ff;
     font-family: 'Darker Grotesque', serif;
@@ -46,4 +42,5 @@ button {
 
 button:hover {
     background-color: #001529;
+    color: #cce8ff;
 }

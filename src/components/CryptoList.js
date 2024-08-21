@@ -1,13 +1,11 @@
 import React, { useEffect, useState } from "react"
 import { Table, Button } from "antd"
 import axios from "axios"
-/* import { Link } from "react-router-dom" */
 import "../styles/CryptoList.css"
+import "../styles/generalmediaqueries.css"
 import { Line } from 'react-chartjs-2'
 import { Chart as ChartJS, LineElement, CategoryScale, LinearScale } from 'chart.js';
 import { HeartOutlined, HeartFilled } from '@ant-design/icons';
-
-
 
 ChartJS.register(LineElement, CategoryScale, LinearScale);
 
@@ -18,10 +16,13 @@ const CryptoList = () => {
     const [data, setData] = useState([]);
     const [darkMode, setDarkMode] = useState(false);
     const [favorites, setFavorites] = useState(() => JSON.parse(localStorage.getItem('favorites')) || []);
-
+    const [page, setPage] = useState(1);
+    const [loading, setLoading] = useState(false);
 
     useEffect(() => {
         const fetchData = async () => {
+            if (loading) return; // Prevent multiple fetch calls
+            setLoading(true);
             try {
                 const result = await axios.get(
                     `${BASE_URL}/coins/markets`,
@@ -30,19 +31,38 @@ const CryptoList = () => {
                             vs_currency: 'usd',
                             order: 'market_cap_desc',
                             per_page: 50,
-                            page: 1,
+                            page: page,
                             sparkline: true,
                             x_cg_demo_api_key: API_KEY,
                         },
                     }
                 );
-                setData(result.data);
+                setData(prevData => [...prevData, ...result.data]);
             } catch (error) {
                 console.log("Error getting data:", error);
+            } finally {
+                setLoading(false);
             }
         };
 
         fetchData();
+    }, [page]);
+
+    // Function to handle scroll
+    const handleScroll = () => {
+        const tableElement = document.getElementById("cryptoTable");
+        if (tableElement.scrollTop + tableElement.clientHeight >= tableElement.scrollHeight - 5) {
+            setPage(prevPage => prevPage + 1);
+        }
+    };
+
+    useEffect(() => {
+        const tableElement = document.getElementById("cryptoTable");
+        tableElement.addEventListener("scroll", handleScroll);
+
+        return () => {
+            tableElement.removeEventListener("scroll", handleScroll); // Clean up listener
+        };
     }, []);
 
     const formatCurrency = (number) => {
@@ -91,7 +111,7 @@ const CryptoList = () => {
             render: sparkline => {
                 if (!sparkline || !sparkline.price) return null;
 
-                const lineColor = data.find(record => record.id === sparkline.id)?.price_change_percentage_24h > 0 ? 'green' : 'red';
+                const lineColor = data.find(record => record.id === sparkline.id)?.price_change_percentage_24h > 0 ? 'red' : 'green';
 
                 const chartData = {
                     labels: sparkline.price.map((_, index) => index),
@@ -142,12 +162,12 @@ const CryptoList = () => {
     ];
 
     return (
-
         <div className={darkMode ? 'dark-mode' : 'light-mode'}>
-            <Table dataSource={data} columns={columns} rowKey="id" />
+            <div id="cryptoTable" style={{ overflowY: 'auto', maxHeight: '80vh' }}> {/* Add overflow and max height for scrolling */}
+                <Table dataSource={data} columns={columns} rowKey="id" pagination={false} /> {/* Disable pagination */}
+            </div>
         </div>
     )
 }
-
 
 export default CryptoList;

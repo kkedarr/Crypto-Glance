@@ -1,0 +1,79 @@
+body {
+    font-family: 'Darker Grotesque', serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* For Mobile devices */
+@media (max-with: 576px) {
+    body {
+        font-size: 14px;
+    }
+
+    .ant-card {
+        margin: 10px;
+    }
+
+    .ant-list-item {
+        padding: 10px;
+    }
+}
+
+/* For Tablets*/
+@media (min-width: 577px) and (max-width: 768px) {
+    body {
+        font-size: 16px;
+    }
+
+    .ant-card {
+        margin: 15px;
+    }
+
+    .ant-list-item {
+        padding: 15px;
+    }
+}
+
+/* Small Desktop Screens*/
+@media (min-width: 769px) and (max-width: 1024px) {
+    body {
+        font-size: 18px;
+    }
+
+    .ant-card {
+        margin: 20px;
+    }
+
+    .ant-list-item {
+        padding: 20px;
+    }
+}
+
+/* Large Descktop Screens*/
+@media (min-width: 1025px) {
+    body {
+        font-size: 20px;
+    }
+
+    .ant-card {
+        margin: 25px;
+    }
+
+    .ant-list-item {
+        padding: 25px;
+    }
+}
+
+/* Header Font Sizes */
+h1 {
+    font-size: 2rem;
+}
+
+h2 {
+    font-size: 1.75rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+}
