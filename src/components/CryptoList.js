@@ -21,7 +21,7 @@ const CryptoList = () => {
 
     useEffect(() => {
         const fetchData = async () => {
-            if (loading) return; // Prevent multiple fetch calls
+            if (loading) return;
             setLoading(true);
             try {
                 const result = await axios.get(
@@ -48,7 +48,7 @@ const CryptoList = () => {
         fetchData();
     }, [page]);
 
-    // Function to handle scroll
+
     const handleScroll = () => {
         const tableElement = document.getElementById("cryptoTable");
         if (tableElement.scrollTop + tableElement.clientHeight >= tableElement.scrollHeight - 5) {
@@ -61,7 +61,7 @@ const CryptoList = () => {
         tableElement.addEventListener("scroll", handleScroll);
 
         return () => {
-            tableElement.removeEventListener("scroll", handleScroll); // Clean up listener
+            tableElement.removeEventListener("scroll", handleScroll);
         };
     }, []);
 

@@ -32,6 +32,12 @@
     font-size: 18px;
 }
 
+.light-mode .ant-table-tbody>tr:hover {
+    background-color: #FFFFFF;
+    color: #001529;
+    font-size: 18px;
+}
+
 .dark-mode .ant-table-thead>tr>th {
     background-color: #001529;
     color: #cce8ff;
@@ -44,6 +50,12 @@
     font-size: 18px;
 }
 
+.dark-mode .ant-table-tbody>tr:hover {
+    background-color: #002A52;
+    color: #002A52;
+    font-size: 18px;
+}
+
 .dark-mode .ant-table-tbody>td {
     background-color: #002A52;
     color: #cce8ff;
@@ -52,6 +64,5 @@
 
 .ant-switch-checked {
     background-color: #007da3;
-    font-family: 'Darker Grotesque', serif;
     font-size: 18px;
 }
