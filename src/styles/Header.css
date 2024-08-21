@@ -1,17 +1,29 @@
 .header-dark {
     background-color: #001529;
+    /* Oxford Blue */
     color: #edf5fd;
-    padding: 0 20px;
+    /* Alice Blue */
     display: flex;
     align-items: center;
+
+    .menu {
+        background-color: #001529;
+        /* Oxford Blue */
+    }
 }
 
 .header-light {
     background-color: #cce8ff;
-    color: #0d1321;
-    padding: 0 20px;
+    /* Columbia Blue */
+    color: #001529;
+    /* Rich Black */
     display: flex;
     align-items: center;
+
+    .menu {
+        background-color: #cce8ff;
+        /* Columbia Blue */
+    }
 }
 
 .logo {
@@ -30,7 +42,6 @@
     display: flex;
     flex: 1;
     align-items: center;
-    margin-left: 770px;
 }
 
 .theme-switch {
@@ -49,22 +60,33 @@
     color: inherit;
 }
 
-/* Desktop Screen Sizes */
 @media (max-width: 1200px) {
     .header-dark {
         background-color: #001529;
+        /* Oxford Blue */
         color: #edf5fd;
-        padding: 0 20px;
+        /* Alice Blue */
         display: flex;
         align-items: center;
+
+        .menu {
+            background-color: #001529;
+            /* Oxford Blue */
+        }
     }
 
     .header-light {
         background-color: #cce8ff;
-        color: #0d1321;
-        padding: 0 20px;
+        /* Columbia Blue */
+        color: #001529;
+        /* Rich Black */
         display: flex;
         align-items: center;
+
+        .menu {
+            background-color: #cce8ff;
+            /* Columbia Blue */
+        }
     }
 
     .logo {
@@ -83,7 +105,6 @@
         display: flex;
         flex: 1;
         align-items: center;
-        margin-left: 770px;
     }
 
     .theme-switch {
@@ -103,18 +124,33 @@
     }
 }
 
-/* Tablet Screen Sizes */
 @media (max-width: 992px) {
     .header-dark {
         background-color: #001529;
+        /* Oxford Blue */
         color: #edf5fd;
+        /* Alice Blue */
         display: flex;
+        align-items: center;
+
+        .menu {
+            background-color: #001529;
+            /* Oxford Blue */
+        }
     }
 
     .header-light {
         background-color: #cce8ff;
-        color: #0d1321;
+        /* Columbia Blue */
+        color: #001529;
+        /* Rich Black */
         display: flex;
+        align-items: center;
+
+        .menu {
+            background-color: #cce8ff;
+            /* Columbia Blue */
+        }
     }
 
     .logo {
@@ -133,7 +169,6 @@
         display: flex;
         flex: 1;
         align-items: center;
-        margin-left: 770px;
     }
 
     .theme-switch {
@@ -153,8 +188,130 @@
     }
 }
 
-/* Phone Sizes */
-@media (max-width: 768px) {}
+@media (max-width: 768px) {
+    .header-dark {
+        background-color: #001529;
+        /* Oxford Blue */
+        color: #edf5fd;
+        /* Alice Blue */
+        display: flex;
+        align-items: center;
 
-/* Small Screen Sizes */
-@media (max-width: 576px) {}
+        .menu {
+            background-color: #001529;
+            /* Oxford Blue */
+        }
+    }
+
+    .header-light {
+        background-color: #cce8ff;
+        /* Columbia Blue */
+        color: #001529;
+        /* Rich Black */
+        display: flex;
+        align-items: center;
+
+        .menu {
+            background-color: #cce8ff;
+            /* Columbia Blue */
+        }
+    }
+
+    .logo {
+        height: 50px;
+        width: auto;
+        margin-right: 20px;
+    }
+
+    .logoText {
+        height: 50px;
+        width: auto;
+        margin-right: auto;
+    }
+
+    .menu {
+        display: flex;
+        flex: 1;
+        align-items: center;
+    }
+
+    .theme-switch {
+        margin: 0;
+    }
+
+    .switch-item {
+        margin-left: 20px;
+    }
+
+    .ant-menu {
+        line-height: 64px;
+    }
+
+    .ant-menu-item {
+        color: inherit;
+    }
+}
+
+@media (max-width: 576px) {
+    .header-dark {
+        background-color: #001529;
+        /* Oxford Blue */
+        color: #edf5fd;
+        /* Alice Blue */
+        display: flex;
+        align-items: center;
+
+        .menu {
+            background-color: #001529;
+            /* Oxford Blue */
+        }
+    }
+
+    .header-light {
+        background-color: #cce8ff;
+        /* Columbia Blue */
+        color: #001529;
+        /* Rich Black */
+        display: flex;
+        align-items: center;
+
+        .menu {
+            background-color: #cce8ff;
+            /* Columbia Blue */
+        }
+    }
+
+    .logo {
+        height: 50px;
+        width: auto;
+        margin-right: 20px;
+    }
+
+    .logoText {
+        height: 50px;
+        width: auto;
+        margin-right: auto;
+    }
+
+    .menu {
+        display: flex;
+        flex: 1;
+        align-items: center;
+    }
+
+    .theme-switch {
+        margin: 0;
+    }
+
+    .switch-item {
+        margin-left: 20px;
+    }
+
+    .ant-menu {
+        line-height: 64px;
+    }
+
+    .ant-menu-item {
+        color: inherit;
+    }
+}

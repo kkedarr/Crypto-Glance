@@ -13,7 +13,7 @@ const Favorites = () => {
     }, []);
 
     return (
-        <div className={darkMode ? 'favorites-dark' : 'favorites-light'}>
+        <div className={darkMode ? 'ant-card' : 'ant-card'}>
             <h2>Favorites</h2>
             {favorites.length === 0 ? (
                 <p>No favorites added.</p>
@@ -22,7 +22,7 @@ const Favorites = () => {
                     <Card key={crypto.id} title={crypto.name}>
                         <p>Symbol: {crypto.symbol.toUpperCase()}</p>
                         <p>Current Price: ${crypto.current_price}</p>
-                        <Link to={`/crypto/${crypto.id}`}>View Details</Link>
+                        <Link to={`/crypto/${crypto.id}`}>Chart Details</Link>
                     </Card>
                 ))
             )}
